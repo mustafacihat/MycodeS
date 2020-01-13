@@ -1,0 +1,25 @@
+package day10TernaryOpForLoop;
+
+public class Task46 {
+
+	public static void main(String[] args) {
+		
+		// Show the multiplication table for 7 
+		
+		System.out.println("Multiplication table for 7");
+		System.out.println("--------------------------");
+		final int MULTIPLICATION_NUMBER = 7;
+		
+		for (int i = 1; i <= 10; i++) {
+			
+			int multiplicationResult = i * MULTIPLICATION_NUMBER;
+			
+			System.out.println(MULTIPLICATION_NUMBER + " * " + i + " = " + multiplicationResult);
+			
+		}
+		
+		
+
+	}
+
+}
