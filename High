@@ -1,0 +1,43 @@
+import java.util.Arrays;
+
+public class High {
+
+    public static void main(String[] args) {
+        System.out.println(high("man i need a taxi up to ubud "));
+        System.out.println(high("what time are we climbing up to the volcano"));
+        System.out.println(high("take me to semynak"));
+    }
+
+    public static String high(String s) {
+
+        String[] arr = s.split(" ");
+
+
+        int[] nums = new int[arr.length];
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length(); j++) {
+                sum += (int) arr[i].charAt(j)-96;
+            }
+            nums[i] = sum;
+        }
+
+        for (int i = nums.length - 1; i > 0; i--) {
+            nums[i] = nums[i] - nums[i - 1];
+        }
+
+        System.out.println(Arrays.toString(nums));
+
+        int max = nums[0];
+        int forArray = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] > max) {
+                max = nums[i];
+                forArray = i;
+            }
+        }
+
+
+        return arr[forArray];
+    }
+}
